@@ -1,17 +1,20 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface ApiSavedSaved extends Struct.CollectionTypeSchema {
-  collectionName: 'saveds';
+export interface ApiUserResumeUserResume extends Struct.CollectionTypeSchema {
+  collectionName: 'user_resumes';
   info: {
-    singularName: 'saved';
-    pluralName: 'saveds';
-    displayName: 'Saved';
+    singularName: 'user-resume';
+    pluralName: 'user-resumes';
+    displayName: 'User Resume';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Desc: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    resumeid: Schema.Attribute.String;
+    userEmail: Schema.Attribute.Email;
+    userName: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -817,7 +820,7 @@ export interface AdminTransferTokenPermission
 declare module '@strapi/strapi' {
   export module Public {
     export interface ContentTypeSchemas {
-      'api::saved.saved': ApiSavedSaved;
+      'api::user-resume.user-resume': ApiUserResumeUserResume;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;

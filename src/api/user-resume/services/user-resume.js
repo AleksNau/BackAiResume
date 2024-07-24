@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * saved service
+ * user-resume service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::saved.saved');
+module.exports = createCoreService('api::user-resume.user-resume');
