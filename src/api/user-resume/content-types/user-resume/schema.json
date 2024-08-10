@@ -42,6 +42,19 @@
     },
     "email": {
       "type": "string"
+    },
+    "summery": {
+      "type": "text"
+    },
+    "education": {
+      "type": "component",
+      "repeatable": true,
+      "component": "education.education"
+    },
+    "experience": {
+      "type": "component",
+      "repeatable": true,
+      "component": "experience.experience"
     }
   }
 }
